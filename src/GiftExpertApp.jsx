@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { AddCategory } from "./components/AddCategory";
+import { GiftGrid } from "./components/GiftGrid";
 
 const apiKey = "C7IgKP3nG1CMgzOUV3OoYLQmE84SL8sQ";
 export const GiftExpertApp = () => {
@@ -9,36 +10,38 @@ export const GiftExpertApp = () => {
     const onAddCategory = (event) => {
         //valorant
         console.log(categories);
-        if( categories.includes(event) ) return;
-        
+        if (categories.includes(event)) return;
+
         console.log(event);
         //setCategories([...categories, 'Valorant']);
         // setCategories( cat => [... cat, 'Valorant'] );
-        setCategories([...categories, event]);
+        setCategories([ event, ...categories]);
 
     }
 
     return (
         <>
-            {/* titulo */}
 
             <h1>GiftExpertApp</h1>
 
-            {/* input */}
             <AddCategory
                 onNewCategory={event => onAddCategory(event)}
-                
+
             />
 
-            {/* listado fe gif */}
 
-            <ol>
-                {categories.map(categoriy => {
-                    return <li key={categoriy}> {categoriy} </li>
-                })}
 
-            </ol>
-            {/* gif item */}
+
+            {categories.map(category =>
+            (
+                <GiftGrid key={category}
+                    category={category}
+                />
+            )
+            )}
+
+
+
         </>
     );
 };
