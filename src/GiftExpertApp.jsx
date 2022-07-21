@@ -21,10 +21,10 @@ export const GiftExpertApp = () => {
             <h1>GiftExpertApp</h1>
 
             {/* input */}
-            <AddCategory/>
+            <AddCategory setCategories = { setCategories } />
 
             {/* listado fe gif */}
-            <button onClick={onAddCategory}>Agregar</button>
+            
             <ol>
                 { categories.map( categoriy =>{
                     return <li key={ categoriy }> { categoriy } </li>
