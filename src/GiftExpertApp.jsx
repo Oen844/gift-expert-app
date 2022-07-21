@@ -8,6 +8,9 @@ export const GiftExpertApp = () => {
 
     const onAddCategory = (event) => {
         //valorant
+        console.log(categories);
+        if( categories.includes(event) ) return;
+        
         console.log(event);
         //setCategories([...categories, 'Valorant']);
         // setCategories( cat => [... cat, 'Valorant'] );
@@ -24,6 +27,7 @@ export const GiftExpertApp = () => {
             {/* input */}
             <AddCategory
                 onNewCategory={event => onAddCategory(event)}
+                
             />
 
             {/* listado fe gif */}
