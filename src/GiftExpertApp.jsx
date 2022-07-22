@@ -4,7 +4,7 @@ import { GiftGrid } from "./components/GiftGrid";
 
 const apiKey = "C7IgKP3nG1CMgzOUV3OoYLQmE84SL8sQ";
 export const GiftExpertApp = () => {
-    const arrCategories = [" One Punch ", "Dragon ball"];
+    const arrCategories = [" One Punch "];
     const [categories, setCategories] = useState(arrCategories);
 
     const onAddCategory = (event) => {
