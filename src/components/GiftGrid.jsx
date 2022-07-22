@@ -2,23 +2,28 @@ import { getGifts } from "../helpers/getGifs.js";
 import { useState , useEffect} from "react";
 
 export const GiftGrid = ({ category, key }) => {
-
-    const [counter, setCounter] = useState(10)
     
+    const [images, setImages] = useState([]);
+
+    const getImages = async() => {
+        const newImages = await getGifts(category);
+        setImages(newImages)
+    }
+
     useEffect( () => {
-        getGifts();
+       getImages();
     }, [  ])
-
-    
-    
+  
 
     return (
         <>
-            <h3 key={key}>{category}</h3>
+            <h3>{category}</h3>
 
-            <h5>{ counter }</h5>
-            <button onClick={ ( ) => setCounter ( counter + 1 )}>+1</button>
-
+            <ol>
+                {images.map( ({id, title}) => (
+                    <li key = {id}>{title}</li>
+                ))}
+            </ol>
         </>
     )
 }

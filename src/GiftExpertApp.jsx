@@ -8,14 +8,8 @@ export const GiftExpertApp = () => {
     const [categories, setCategories] = useState(arrCategories);
 
     const onAddCategory = (event) => {
-        //valorant
-        console.log(categories);
         if (categories.includes(event)) return;
-
-        console.log(event);
-        //setCategories([...categories, 'Valorant']);
-        // setCategories( cat => [... cat, 'Valorant'] );
-        setCategories([ event, ...categories]);
+        setCategories([event, ...categories]);
 
     }
 
