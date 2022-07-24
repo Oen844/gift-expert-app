@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { AddCategory } from "./components/AddCategory";
-import { GiftGrid } from "./components/GiftGrid";
+import { AddCategory } from "./components";
+import { GiftGrid } from "./components";
 
 const apiKey = "C7IgKP3nG1CMgzOUV3OoYLQmE84SL8sQ";
 export const GiftExpertApp = () => {
@@ -15,16 +15,12 @@ export const GiftExpertApp = () => {
 
     return (
         <>
-
             <h1>GiftExpertApp</h1>
 
             <AddCategory
                 onNewCategory={event => onAddCategory(event)}
 
             />
-
-
-
 
             {categories.map(category =>
             (
